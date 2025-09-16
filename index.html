@@ -4,6 +4,7 @@
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="">
      <title>TIC TAC TOE</title>
      <style>
           body {
@@ -13,108 +14,112 @@
                background-image: url(bg.jpg);
                background-position: center;
                background-size: cover;
-               font-family: sans-serif;
-          }
 
-          .blur {
-               min-height: 100vh;
-               width: 100%;
-               backdrop-filter: blur(5px);
-               background-color: rgba(0, 0, 0, 0.2);
-               display: flex;
-               flex-direction: column;
-               align-items: center;
-               justify-content: flex-start;
-               padding: 1rem;
-          }
 
-          #heading {
-               font-weight: bold;
-               font-size: 8vw;
-               color: rgb(255, 3, 171);
-               text-align: center;
-               margin: 1rem 0;
-               text-shadow: 7px 7px 2px rgb(0, 0, 0);
-               background-color: rgba(0, 0, 0, 0.7);
-               padding: 0.5rem;
-               border-radius: 10px;
-               width: 100%;
-          }
-
-          #msg1 {
-               width: 100%;
-               font-weight: bold;
-               font-size: 10vw;
-               color: rgb(255, 3, 171);
-               text-align: center;
-               margin-top: 1rem;
-               text-shadow: 7px 7px 2px rgb(0, 0, 0);
-               background-color: rgba(0, 0, 0, 0.7);
-               display: none;
           }
 
           .main_div {
-               display: grid;
-               grid-template-columns: repeat(3, 1fr);
-               gap: 0.8rem;
-               width: 100%;
-               max-width: 370px;
-               margin: 1.5rem auto;
+               height: auto;
+               width: 370px;
+               float: left;
                background-color: rgba(255, 192, 203, 0.384);
-               padding: 1rem;
-               border-radius: 12px;
+               margin-left: 465px;
+               margin-top: -20px;
+               padding: 20px;
           }
 
-          button {
-               aspect-ratio: 1/1;
+          .blur {
+               height: 580px;
                width: 100%;
+               margin: 0;
+               backdrop-filter: blur(5px);
+               background-color: rgba(0, 0, 0, 0.2);
+          }
+
+
+          button {
+               float: left;
+               height: 100px;
+               width: 100px;
+               margin: 10px;
                background-image: linear-gradient(to bottom right, rgb(247, 169, 208), rgb(247, 0, 175));
                border: 2px solid rgb(236, 160, 173);
+               text-align: center;
                border-radius: 20px;
                box-shadow: 2px 2px 10px rgb(243, 3, 123);
-               color: #fff;
-               font-size: 2.5rem;
-               font-weight: bold;
-               cursor: pointer;
-               transition: all 0.2s ease-in-out;
+               color: rgb(255, 255, 255);
           }
 
           button:hover {
                background-image: linear-gradient(to top left, rgb(255, 169, 208), rgb(247, 0, 175));
                box-shadow: 5px 5px 5px rgb(255, 20, 147);
-               transform: scale(1.05);
+               cursor: pointer;
+               transform: scale(1.1);
+          }
+
+          h1 {
+               font-weight: 400;
+               font-size: 90px;
+               margin-top: -5px;
+          }
+
+          #heading {
+               font-weight: bold;
+               font-size: 50px;
+               color: rgb(255, 3, 171);
+               text-align: center;
+               margin-top: 20px;
+               text-shadow: 7px 7px 2px rgb(0, 0, 0);
+
+               background-color: rgba(0, 0, 0, 0.7);
+          }
+
+          #msg1 {
+               width: 100%;
+               font-weight: bold;
+               font-size: 100px;
+               color: rgb(255, 3, 171);
+               text-align: center;
+               margin-top: 10px;
+               text-shadow: 7px 7px 2px rgb(0, 0, 0);
+               background-color: rgba(0, 0, 0, 0.7);
+               position: absolute;
+               margin-top: 123px;
+               z-index: 10;
+
           }
 
           #reset1 {
                height: 50px;
-               width: 140px;
-               margin: 1rem auto;
+               width: 100px;
+               clear: left;
+               margin-left: 615px;
                background-image: linear-gradient(rgb(236, 103, 170), rgb(167, 26, 96));
                border: 2px solid rgb(236, 160, 173);
                text-align: center;
-               border-radius: 10px;
-               font-size: 1rem;
-               font-weight: bold;
-               color: #fff;
-               box-shadow: 2px 2px 10px rgb(243, 3, 123);
-               cursor: pointer;
-               display: block;
+          }
+          @media(max-width:567px){
+               .main_div{
+                    width: 86%;
+                    margin:0;
+                    padding: 7%;
+                    text-align: center;
+
+               }
+               .blur{
+                    width: 100%;
+               }
+               #reset1{
+                    margin-left:35%;
+               }
+               button{
+                    width:28%;
+                    margin: 2%;
+
+               }
+               
           }
 
-          /* Larger screens */
-          @media (min-width: 768px) {
-               #heading {
-                    font-size: 50px;
-               }
-
-               #msg1 {
-                    font-size: 70px;
-               }
-
-               button {
-                    font-size: 3rem;
-               }
-          }
      </style>
 </head>
 
@@ -123,36 +128,22 @@
           <h1 id="heading">TIC TAC TOE</h1>
           <div id="msg1"></div>
           <div class="main_div">
-               <button onclick="input1()">
-                    <h1 id="1"></h1>
-               </button>
-               <button onclick="input2()">
-                    <h1 id="2"></h1>
-               </button>
-               <button onclick="input3()">
-                    <h1 id="3"></h1>
-               </button>
-               <button onclick="input4()">
-                    <h1 id="4"></h1>
-               </button>
-               <button onclick="input5()">
-                    <h1 id="5"></h1>
-               </button>
-               <button onclick="input6()">
-                    <h1 id="6"></h1>
-               </button>
-               <button onclick="input7()">
-                    <h1 id="7"></h1>
-               </button>
-               <button onclick="input8()">
-                    <h1 id="8"></h1>
-               </button>
-               <button onclick="input9()">
-                    <h1 id="9"></h1>
-               </button>
+               <button onclick="input1()"> <h1 id="1"> </h1> </button>
+               <button onclick="input2()"> <h1 id="2"> </h1> </button>
+               <button onclick="input3()"> <h1 id="3"> </h1> </button>
+               <button onclick="input4()"> <h1 id="4"> </h1> </button>
+               <button onclick="input5()"> <h1 id="5"> </h1> </button>
+               <button onclick="input6()"> <h1 id="6"> </h1> </button>
+               <button onclick="input7()"> <h1 id="7"> </h1> </button>
+               <button onclick="input8()"> <h1 id="8"> </h1> </button>
+               <button onclick="input9()"> <h1 id="9"> </h1> </button>
           </div>
-          <button id="reset1" onclick="handlerReset()">RESET</button>
+          <div >
+               <h1 id="chance"> </h1>
+          </div>
+          <button id="reset1" onclick="handlerReset()"> RESET </button>
      </div>
+
      <script>
 
 
@@ -337,6 +328,7 @@
                checkx();
                check0();
           }
+
           function checkx() {
                if ((array1[0] == 'X' && array1[3] == 'X' && array1[6] == 'X') || (array1[1] == 'X' && array1[4] == 'X' && array1[7] === 'X') || (array1[2] == 'X' && array1[5] == 'X' && array1[8] == 'X') || (array1[3] == 'X' && array1[4] == 'X' && array1[5] == 'X') || (array1[0] == 'X' && array1[1] == 'X' && array1[2] == 'X') || (array1[6] == 'X' && array1[7] == 'X' && array1[8] == 'X') || (array1[0] == 'X' && array1[4] == 'X' && array1[8] == 'X') || (array1[2] == 'X' && array1[4] == 'X' && array1[6] == 'X')) {
                     console.log("cheking")
@@ -351,6 +343,7 @@
                     document.getElementById('msg1').setAttribute('style', ' width: 100% , font-weight:bold , font-size: 100px , color:rgb(255, 3, 171) , text-align: center , margin-top: 10px , text-shadow: 7px 7px 2px rgb(0, 0, 0) , background-color: rgba(0, 0, 0, 0.7) , position: absolute ,margin-top: 123px , display:block');
                }
           }
+
           function check0() {
                if ((array1[0] == '0' && array1[3] == '0' && array1[6] == '0') || (array1[1] == '0' && array1[4] == '0' && array1[7] == '0') || (array1[2] == '0' && array1[5] == '0' && array1[8] == '0') || (array1[0] == '0' && array1[1] == '0' && array1[2] == '0') || (array1[3] == '0' && array1[4] == '0' && array1[5] == '0') || (array1[6] == '0' && array1[7] == '0' && array1[8] == '0') || (array1[0] == '0' && array1[4] == '0' && array1[8] == '0') || (array1[2] == '0' && array1[4] == '0' && array1[6] == '0')) {
                     console.log("cheking")
@@ -364,7 +357,10 @@
                     document.getElementById('msg1').innerText = " MATCH DRAW ";
                     document.getElementById('msg1').setAttribute('style', ' width: 100% , font-weight:bold , font-size: 100px , color:rgb(255, 3, 171) , text-align: center , margin-top: 10px , text-shadow: 7px 7px 2px rgb(0, 0, 0) , background-color: rgba(0, 0, 0, 0.7) , position: absolute ,margin-top: 123px , display:block');
                }
+
           }
+
+
           function reset1() {
                let a1 = 1;
                let array2 = new Array;
