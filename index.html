@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="">
-     <title>TIC TAC TOE</title>
+     <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuFe1RcmdV0E3_PrOJ1c3aemYtW44f5FcyjQ&s">
+     <title> TIC TAC TOE </title>
      <style>
           body {
                margin: 0;
@@ -43,7 +42,6 @@
                box-shadow: 2px 2px 10px rgb(243, 3, 123);
                color: rgb(255, 255, 255);
           }
-
           button:hover {
                background-image: linear-gradient(to top left, rgb(255, 169, 208), rgb(247, 0, 175));
                box-shadow: 5px 5px 5px rgb(255, 20, 147);
@@ -62,7 +60,6 @@
                text-align: center;
                margin-top: 20px;
                text-shadow: 7px 7px 2px rgb(0, 0, 0);
-
                background-color: rgba(0, 0, 0, 0.7);
           }
           #msg1 {
@@ -78,7 +75,6 @@
                margin-top: 123px;
                z-index: 10;
           }
-
           #reset1 {
                height: 50px;
                width: 100px;
@@ -105,8 +101,8 @@
                     width:28%;
                     margin: 2%;
                }
-               #msg{
-                    font-size:30px;
+               #msg1{
+                    font-size: 70px;
                }
           }
      </style>
@@ -131,12 +127,10 @@
           </div>
           <button id="reset1" onclick="handlerReset()"> RESET </button>
      </div>
-
      <script>
           var a = 1;
           var array1 = new Array;
           var bool1 = true, bool2 = true, bool3 = true, bool4 = true, bool5 = true, bool6 = true, bool7 = true, bool8 = true, bool9 = true;
-
           function handlerReset() {
                [a, array1, bool1, bool2, bool3, bool4, bool5, bool6, bool7, bool8, bool9] = reset1();
           }
@@ -157,7 +151,6 @@
                }
                console.log(a);
                console.log(bool1);
-
                checkx();
                check0();
           }
@@ -313,7 +306,6 @@
                checkx();
                check0();
           }
-
           function checkx() {
                if ((array1[0] == 'X' && array1[3] == 'X' && array1[6] == 'X') || (array1[1] == 'X' && array1[4] == 'X' && array1[7] === 'X') || (array1[2] == 'X' && array1[5] == 'X' && array1[8] == 'X') || (array1[3] == 'X' && array1[4] == 'X' && array1[5] == 'X') || (array1[0] == 'X' && array1[1] == 'X' && array1[2] == 'X') || (array1[6] == 'X' && array1[7] == 'X' && array1[8] == 'X') || (array1[0] == 'X' && array1[4] == 'X' && array1[8] == 'X') || (array1[2] == 'X' && array1[4] == 'X' && array1[6] == 'X')) {
                     console.log("cheking")
@@ -328,7 +320,6 @@
                     document.getElementById('msg1').setAttribute('style', ' width: 100% , font-weight:bold , font-size: 100px , color:rgb(255, 3, 171) , text-align: center , margin-top: 10px , text-shadow: 7px 7px 2px rgb(0, 0, 0) , background-color: rgba(0, 0, 0, 0.7) , position: absolute ,margin-top: 123px , display:block');
                }
           }
-
           function check0() {
                if ((array1[0] == '0' && array1[3] == '0' && array1[6] == '0') || (array1[1] == '0' && array1[4] == '0' && array1[7] == '0') || (array1[2] == '0' && array1[5] == '0' && array1[8] == '0') || (array1[0] == '0' && array1[1] == '0' && array1[2] == '0') || (array1[3] == '0' && array1[4] == '0' && array1[5] == '0') || (array1[6] == '0' && array1[7] == '0' && array1[8] == '0') || (array1[0] == '0' && array1[4] == '0' && array1[8] == '0') || (array1[2] == '0' && array1[4] == '0' && array1[6] == '0')) {
                     console.log("cheking")
@@ -342,10 +333,7 @@
                     document.getElementById('msg1').innerText = " MATCH DRAW ";
                     document.getElementById('msg1').setAttribute('style', ' width: 100% , font-weight:bold , font-size: 100px , color:rgb(255, 3, 171) , text-align: center , margin-top: 10px , text-shadow: 7px 7px 2px rgb(0, 0, 0) , background-color: rgba(0, 0, 0, 0.7) , position: absolute ,margin-top: 123px , display:block');
                }
-
           }
-
-
           function reset1() {
                let a1 = 1;
                let array2 = new Array;
@@ -360,12 +348,8 @@
                document.getElementById('8').innerText = "";
                document.getElementById('9').innerText = "";
                document.getElementById('msg1').innerText = "";
-
                return [a1, array2, bool11, bool22, bool33, bool44, bool55, bool66, bool77, bool88, bool99];
           }
-
-
      </script>
 </body>
-
 </html>
