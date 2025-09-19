@@ -14,10 +14,7 @@
                background-image: url(bg.jpg);
                background-position: center;
                background-size: cover;
-
-
           }
-
           .main_div {
                height: auto;
                width: 370px;
@@ -27,7 +24,6 @@
                margin-top: -20px;
                padding: 20px;
           }
-
           .blur {
                height: 580px;
                width: 100%;
@@ -35,8 +31,6 @@
                backdrop-filter: blur(5px);
                background-color: rgba(0, 0, 0, 0.2);
           }
-
-
           button {
                float: left;
                height: 100px;
@@ -56,13 +50,11 @@
                cursor: pointer;
                transform: scale(1.1);
           }
-
           h1 {
                font-weight: 400;
                font-size: 90px;
                margin-top: -5px;
           }
-
           #heading {
                font-weight: bold;
                font-size: 50px;
@@ -73,7 +65,6 @@
 
                background-color: rgba(0, 0, 0, 0.7);
           }
-
           #msg1 {
                width: 100%;
                font-weight: bold;
@@ -86,7 +77,6 @@
                position: absolute;
                margin-top: 123px;
                z-index: 10;
-
           }
 
           #reset1 {
@@ -104,7 +94,6 @@
                     margin:0;
                     padding: 7%;
                     text-align: center;
-
                }
                .blur{
                     width: 100%;
@@ -115,14 +104,13 @@
                button{
                     width:28%;
                     margin: 2%;
-
                }
-               
+               #msg{
+                    font-size:30px;
+               }
           }
-
      </style>
 </head>
-
 <body>
      <div class="blur">
           <h1 id="heading">TIC TAC TOE</h1>
@@ -145,8 +133,6 @@
      </div>
 
      <script>
-
-
           var a = 1;
           var array1 = new Array;
           var bool1 = true, bool2 = true, bool3 = true, bool4 = true, bool5 = true, bool6 = true, bool7 = true, bool8 = true, bool9 = true;
@@ -154,7 +140,6 @@
           function handlerReset() {
                [a, array1, bool1, bool2, bool3, bool4, bool5, bool6, bool7, bool8, bool9] = reset1();
           }
-
           function input1() {
                if (a < 10 && bool1 == true) {
                     if (a % 2 != 0) {
